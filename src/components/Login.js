@@ -66,7 +66,7 @@ const Login = () => {
     return (
         <>
 
-            <div className="signupMain bgimg01 after:bg-white">
+            {/* <div className="signupMain bgimg01 after:bg-white">
 
                 <div className="max-w-[800px] mx-auto">
 
@@ -125,9 +125,9 @@ const Login = () => {
                                         </div>
                                     </div>
 
-                                    {/* <div className="my-10">
+                                    <div className="my-10">
                                         <Link to={`/forgotpassword`} className='text-sm leading-none text-[rgba(52,86,255,0.9)]'>Forgot your password?</Link>
-                                    </div> */}
+                                    </div>
 
 
                                     <div className="flex flex-wrap items-center my-10 w-full justify-end ">
@@ -167,6 +167,60 @@ const Login = () => {
 
 
                 </div>
+            </div> */}
+
+            <div className="p-10">
+
+                <img src={applogo} className='w-1/3 my-10' alt="" />
+
+                <h1 className='font-bold text-4xl'>Login</h1>
+
+                <p className='my-1 leading-5 mb-10 '>Welcome back, let's get you inside.</p>
+
+                <div className="space-y-5">
+                    <div className="border-0 border-b-[1px] border-black px-3 py-2 flex items-center space-x-3 ">
+
+                        <p>+91</p>
+
+                        <input
+                            className='outline-none '
+                            placeholder='Enter Phone Number'
+                            onChange={e => setmobno(e.target.value)}
+                            type="number"
+                            name="mob"
+                            id="mob"
+                            maxLength={11}
+                            size={11}
+                        />
+
+                    </div>
+
+                    <div className="border-0 border-b-[1px] border-black px-3 py-2 flex items-center space-x-3 justify-between">
+
+                        <input
+                            className='outline-none w-2/3'
+                            placeholder='Enter Password'
+                            onChange={e => setpwd(e.target.value)}
+                            type="password"
+                            name="pass"
+                            id="pass"
+
+                        />
+
+                    </div>
+
+                    <div className="flex flex-wrap items-center my-10 w-full justify-end ">
+
+                        <Link to={`/signup`} className='text-[#1f3d70] bg-white border-[1px] border-[#1f3d70] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative '>SIGN UP</Link>
+
+                        <button className='ml-[10px] flex-1 text-white bg-[#00aa75] border-0 border-[rgba(215,215,215,0.6)] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative ' onClick={handleSignIn}>
+                            LOG IN
+                        </button>
+                    </div>
+
+
+                </div>
+
             </div>
 
         </>

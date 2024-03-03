@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import BASE_URL from '../api_url';
@@ -29,7 +29,8 @@ const Register = () => {
     const [email, setEmail] = useState('')
     const [invt, setInvt] = useState(search.get('invitation_code'));
     const [secret, setSecret] = useState('password')
-
+    const [minutes, setMinutes] = useState(0);
+    const [seconds, setSeconds] = useState(0);
 
     const secrethandel = () => {
         if (secret === 'password') {
@@ -105,9 +106,10 @@ const Register = () => {
             toaster('Invalid Mobile No, please enter a valid number');
             return;
         }
-        fetch(`https://www.fast2sms.com/dev/bulkV2?authorization=27b58V4YOqBDMgWvNjapz1k9IHlrJfynC6w0hceRAZGoLimK3PuJC7OoiV4N2B6DjfwWKzb0lhgEetPH&variables_values=${otpfield}&route=otp&numbers=${mobno}`)
+        fetch(`https://www.fast2sms.com/dev/bulkV2?authorization=U1dPqEDiCO5WfZMAFwovrmz349tKBL0Hbh2eGlN8QXg7ujSRYVTSyRuW9H3LZ2Nafn5X6obgd47ACIt0&variables_values=${otpfield}&route=otp&numbers=${mobno}`)
             .then((response) => {
-                console.log(response);
+                // console.log(response);
+                setSeconds(59)
                 toaster('OTP sent successfully');
             })
             .catch(error => toaster('Something went wrong'));
@@ -115,10 +117,31 @@ const Register = () => {
 
     // console.log("otp",otpfield);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (seconds > 0) {
+                setSeconds(seconds - 1);
+            }
+
+            if (seconds === 0) {
+                if (minutes === 0) {
+                    clearInterval(interval);
+                } else {
+                    setSeconds(59);
+                    setMinutes(minutes - 1);
+                }
+            }
+        }, 1000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [seconds]);
+
     return (
         <>
 
-            <div className="signupMain bgimg01 after:bg-white">
+            {/* <div className="signupMain bgimg01 after:bg-white">
 
                 <div className="max-w-[800px] mx-auto">
 
@@ -222,7 +245,7 @@ const Register = () => {
                                         </div>
                                     </div>
 
-                                    {/* <div className="mb-5 relative">
+                                    <div className="mb-5 relative">
 
                                         <div className="px-[10px] relative border-0 border-solid border-[rgba(215,215,215,0.6)] bg-[rgb(246,246,246)] rounded-[7px] flex items-center flex-wrap">
                                             <input onChange={e => setOtp(e.target.value)}
@@ -240,7 +263,7 @@ const Register = () => {
                                             </div>
 
                                         </div>
-                                    </div> */}
+                                    </div>
 
                                     <div className="mb-5 relative">
 
@@ -298,7 +321,126 @@ const Register = () => {
 
 
                 </div>
+            </div> */}
+
+            <div className="p-10">
+
+                <img src={applogo} className='w-1/3 my-10' alt="" />
+
+                <h1 className='font-bold text-4xl'>Sign Up</h1>
+
+                <p className='my-1 leading-5 mb-10 '>Sign up now for free and start exploring</p>
+
+                <div className="space-y-5">
+                    <div className="border-0 border-b-[1px] border-black px-3 py-2 flex items-center space-x-3 ">
+
+                        <p>+91</p>
+
+                        <input
+                            className='outline-none '
+                            placeholder='Enter Phone Number'
+                            onChange={e => { setMobno(e.target.value); setOTPfield(String(Math.floor(100000 + Math.random() * 900000))) }}
+                            type="number"
+                            name="mobno"
+                            id="mobno"
+                            maxLength={11}
+                            size={11}
+                        />
+
+                    </div>
+
+                    <div className="border-0 border-b-[1px] border-black px-3 py-2 flex items-center space-x-3 justify-between">
+
+                        <input
+                            className='outline-none w-2/3'
+                            placeholder='Enter Password'
+                            onChange={e => setPwd(e.target.value)}
+                            type={secret}
+                            name="pwd"
+                            id="pwd"
+
+                        />
+
+                        <div onClick={secrethandel} className="">
+                            {
+                                secret === 'password' ?
+                                    <AiFillEyeInvisible size={22} />
+                                    :
+                                    <AiFillEye size={22} />
+                            }
+
+                        </div>
+
+                    </div>
+
+                    <div className="border-0 border-b-[1px] border-black px-3 py-2 flex items-center space-x-3 ">
+
+                        <input
+                            type="text"
+                            className='outline-none '
+                            placeholder='Enter Nickname'
+                            onChange={e => setName(e.target.value)}
+                            name="name"
+                            id="name"
+                            maxLength={20}
+                            size={20}
+
+                        />
+
+                    </div>
+
+                    <div className="border-0 border-b-[1px] border-black px-3 py-2 flex items-center space-x-3 ">
+
+                        <input
+                            className='outline-none '
+                            placeholder='Enter Invitation Code'
+                            onChange={e => setInvt(e.target.value)}
+                            type='text'
+                            name="invite"
+                            id="invite"
+                            maxLength={20}
+                            size={20}
+                            value={invt} />
+
+                    </div>
+
+                    <div className="border-0 border-b-[1px] border-black px-3 py-2 flex items-center justify-between">
+
+                        <input
+                            type="text"
+                            className='outline-none w-2/3'
+                            placeholder='Enter OTP Code'
+                            onChange={e => setOtp(e.target.value)}
+                            name="otp"
+                            id="otp"
+
+                        />
+
+                        <button disabled={seconds > 0 || minutes > 0} onClick={handleMessage} data-v-0df625cb="" type="primary" className="flex items-center justify-center bg-yellow-300 text-orange-600 text-sm font-bold py-1 px-3 rounded-lg" data-v-0f114eeb="">
+                            {seconds > 0 || minutes > 0 ?
+                                <>
+                                    {minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+                                </>
+                                :
+                                'Send'}
+                        </button>
+
+                    </div>
+
+                    <div className="flex flex-wrap items-center my-10 w-full justify-end ">
+
+                        <Link to={`/login`} className='text-[#1f3d70] bg-white border-[1px] border-[#1f3d70] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative '>SIGN IN</Link>
+
+                        <button className='ml-[10px] flex-1 text-white bg-[#00aa75] border-0 border-[rgba(215,215,215,0.6)] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative ' onClick={handleRegister}>
+                            SIGN UP
+                        </button>
+                    </div>
+
+
+                </div>
+
             </div>
+
         </>
     )
 }
