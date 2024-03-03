@@ -416,7 +416,7 @@ const Register = () => {
 
                         />
 
-                        <button disabled={seconds > 0 || minutes > 0} onClick={handleMessage} data-v-0df625cb="" type="primary" className="flex items-center justify-center bg-yellow-300 text-orange-600 text-sm font-bold py-1 px-3 rounded-lg" data-v-0f114eeb="">
+                        <button disabled={seconds > 0 || minutes > 0} onClick={handleMessage} data-v-0df625cb="" type="primary" className="flex items-center justify-center text-white bg-[#00aa75] text-sm font-bold py-1 px-3 rounded-lg" data-v-0f114eeb="">
                             {seconds > 0 || minutes > 0 ?
                                 <>
                                     {minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}
