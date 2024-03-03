@@ -169,11 +169,11 @@ const Login = () => {
                 </div>
             </div> */}
 
-            <div className="p-10">
+            <div className="p-10 signupMain bgimg01 after:bg-white">
 
-                <img src={applogo} className='w-1/3 my-10' alt="" />
+                <img src={applogo} className='w-2/3 my-10 p-5 rounded-lg bg-white' alt="" />
 
-                <h1 className='font-bold text-4xl'>Login</h1>
+                <h1 className='font-bold text-4xl '>Login</h1>
 
                 <p className='my-1 leading-5 mb-10 '>Welcome back, let's get you inside.</p>
 
@@ -183,7 +183,7 @@ const Login = () => {
                         <p>+91</p>
 
                         <input
-                            className='outline-none '
+                            className='outline-none bg-transparent '
                             placeholder='Enter Phone Number'
                             onChange={e => setmobno(e.target.value)}
                             type="number"
@@ -198,7 +198,7 @@ const Login = () => {
                     <div className="border-0 border-b-[1px] border-black px-3 py-2 flex items-center space-x-3 justify-between">
 
                         <input
-                            className='outline-none w-2/3'
+                            className='outline-none bg-transparent w-2/3'
                             placeholder='Enter Password'
                             onChange={e => setpwd(e.target.value)}
                             type="password"
