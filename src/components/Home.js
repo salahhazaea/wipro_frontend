@@ -13,8 +13,8 @@ import telegram from '../images/telegram.svg'
 import whatsapp from '../images/whatsapp.svg'
 import task from '../images/05.svg'
 import invite from '../images/06.svg'
-import img201 from '../images/201.png'
-import img301 from '../images/301.png'
+import img201 from '../images/p1.jpg'
+import img301 from '../images/p2.jpg'
 import Card from './Card'
 import { HiOutlineChevronDoubleRight } from 'react-icons/hi'
 import Tradmark from './Tradmark'
@@ -203,7 +203,7 @@ const Home = () => {
                                                     </div>
                                                 </div>
 
-                                                <Link to={'https://telegram.me/kraftofficial1'} className="flex justify-center items-end">
+                                                <Link to={'https://telegram.me/Sora Machineofficial1'} className="flex justify-center items-end">
                                                     <div>
                                                         <img src={telegram} alt="telegram" className='w-12 m-1' />
                                                         <p className='text-[#818393] text-base'>Telegram</p>
@@ -282,14 +282,14 @@ const Home = () => {
                                     <Card
                                         img={img201}
                                         title={'Quickly join'}
-                                        content={'Quickly join Kraft and become a VIP🤑🤑🤑 We will send a lot of gifts to our trusted and loyal users in the days to come.'}
+                                        content={'Quickly join Sora Machine and become a VIP🤑🤑🤑 We will send a lot of gifts to our trusted and loyal users in the days to come.'}
                                         timestamp={'2023-08-24 20:22:04'}
                                     />
 
                                     <Card
                                         img={img301}
                                         title={'Call for prizes'}
-                                        content={'announcement We need more withdrawal screenshots for display Let more users see that there will be no problem with withdrawing money in Kraft Please send the screenshot of your withdrawal to the bank card today to our customer service, if your screenshot is true and qualified, then we will reward you 50Rs The activity ends at 18:00'}
+                                        content={'announcement We need more withdrawal screenshots for display Let more users see that there will be no problem with withdrawing money in Sora Machine Please send the screenshot of your withdrawal to the bank card today to our customer service, if your screenshot is true and qualified, then we will reward you 50Rs The activity ends at 18:00'}
                                         timestamp={'2023-08-24 20:22:04'}
                                     />
                                 </div>

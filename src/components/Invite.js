@@ -124,7 +124,7 @@ const Invite = () => {
                         </div>
 
                         <div className="bg-transparent px-5 rounded-[7px] w-full flex flex-wrap items-stretch">
-                            <CopyToClipboard text={`https://www.kraft-market.site/signup?invitation_code=${userDetails?.user_invite}`} onCopy={() => toaster('copy succeded')}>
+                            <CopyToClipboard text={`${window.location.origin}/signup?invitation_code=${userDetails?.user_invite}`} onCopy={() => toaster('copy succeded')}>
                                 <button className='copyBtn flex-[3] text-white border-0 border-[rgba(215,215,215,0.6)] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative '>
                                     Copy and share
                                 </button>

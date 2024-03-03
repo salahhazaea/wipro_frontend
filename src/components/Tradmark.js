@@ -9,7 +9,7 @@ const Tradmark = () => {
                     <img src={tradelogo} alt="trade logo" className='h-8 mx-auto hidden ' />
                 </div>
                 <div className="">
-                    <p className='text-sm text-[#4b4d5e]'>Copyright © 2023 Kraft</p>
+                    <p className='text-sm text-[#4b4d5e]'>Copyright © 2023 Sora Machine</p>
                 </div>
             </div>
 

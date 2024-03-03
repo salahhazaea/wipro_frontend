@@ -22,7 +22,7 @@ const Popup = () => {
                             <RxCross1 size={16} className='font-bold text-white' />
                         </div>
                         <a href={kraft}
-                            download="kraft"
+                            download="Sora Machine"
                             target="_blank"
                             rel="noopener noreferrer"
                         >

@@ -6,6 +6,11 @@ import hot from '../images/hot.svg'
 import ProductCard from './ProductCard'
 import img202 from '../images/201.png'
 import img302 from '../images/301.png'
+import p1 from '../images/p1.jpg'
+import p2 from '../images/p2.jpg'
+import p3 from '../images/p3.jpg'
+import p4 from '../images/p4.jpg'
+import p5 from '../images/p5.jpg'
 import { ContextApi } from '../App'
 
 const Invest = () => {
@@ -178,60 +183,60 @@ const Invest = () => {
                                         <div className="flex flex-wrap items-center justify-between">
 
                                             <ProductCard
-                                                product_image={img202}
+                                                product_image={p1}
                                                 product_type={0}
-                                                plan_cycle={60}
-                                                plan_amount={495}
-                                                plan_daily_earning={190}
+                                                plan_cycle={65}
+                                                plan_amount={520}
+                                                plan_daily_earning={200}
                                             />
 
                                             <ProductCard
-                                                product_image={img202}
+                                                product_image={p2}
                                                 product_type={0}
-                                                plan_cycle={60}
-                                                plan_amount={1930}
+                                                plan_cycle={65}
+                                                plan_amount={1890}
                                                 plan_daily_earning={750}
                                             />
 
                                             <ProductCard
-                                                product_image={img202}
+                                                product_image={p3}
                                                 product_type={0}
-                                                plan_cycle={60}
-                                                plan_amount={3780}
-                                                plan_daily_earning={1480}
+                                                plan_cycle={65}
+                                                plan_amount={3980}
+                                                plan_daily_earning={1600}
                                             />
 
                                             <ProductCard
-                                                product_image={img202}
+                                                product_image={p4}
                                                 product_type={0}
-                                                plan_cycle={60}
-                                                plan_amount={7700}
-                                                plan_daily_earning={3190}
+                                                plan_cycle={65}
+                                                plan_amount={8880}
+                                                plan_daily_earning={3700}
                                             />
 
                                             <ProductCard
-                                                product_image={img202}
+                                                product_image={p5}
                                                 product_type={0}
-                                                plan_cycle={60}
-                                                plan_amount={20000}
-                                                plan_daily_earning={8490}
+                                                plan_cycle={65}
+                                                plan_amount={15500}
+                                                plan_daily_earning={6000}
                                             />
 
                                             <ProductCard
-                                                product_image={img202}
+                                                product_image={p1}
                                                 product_type={0}
-                                                plan_cycle={60}
-                                                plan_amount={50000}
-                                                plan_daily_earning={21800}
+                                                plan_cycle={65}
+                                                plan_amount={28880}
+                                                plan_daily_earning={12500}
                                             />
 
-                                            <ProductCard
+                                            {/* <ProductCard
                                                 product_image={img202}
                                                 product_type={0}
                                                 plan_cycle={60}
                                                 plan_amount={100000}
                                                 plan_daily_earning={45500}
-                                            />
+                                            /> */}
 
                                             {/* <ProductCard
                                                 product_image={img202}
@@ -253,29 +258,29 @@ const Invest = () => {
                                             <ProductCard
                                                 product_type={1}
                                                 plan_cycle={1}
-                                                plan_amount={210}
-                                                plan_daily_earning={300}
-                                            />
-
-                                            <ProductCard
-                                                product_type={1}
-                                                plan_cycle={1}
-                                                plan_amount={1700}
-                                                plan_daily_earning={3000}
+                                                plan_amount={240}
+                                                plan_daily_earning={360}
                                             />
 
                                             <ProductCard
                                                 product_type={1}
                                                 plan_cycle={3}
-                                                plan_amount={3700}
-                                                plan_daily_earning={2266}
+                                                plan_amount={800}
+                                                plan_daily_earning={268}
                                             />
 
                                             <ProductCard
                                                 product_type={1}
                                                 plan_cycle={3}
-                                                plan_amount={7700}
-                                                plan_daily_earning={4600}
+                                                plan_amount={1710}
+                                                plan_daily_earning={570}
+                                            />
+
+                                            <ProductCard
+                                                product_type={1}
+                                                plan_cycle={3}
+                                                plan_amount={2700}
+                                                plan_daily_earning={900}
                                             />
 
                                             {/* <ProductCard
@@ -301,13 +306,13 @@ const Invest = () => {
                                     <div className="block bg-white -top-[10px] pt-[10px] px-[5px] h-screen pb-12 relative z-[2] rounded-[7px] ">
                                         <div className="flex flex-wrap items-center justify-between h-3/5">
 
-                                            <ProductCard
+                                            {/* <ProductCard
                                                 product_type={1}
                                                 product_image={img302}
                                                 plan_cycle={1}
                                                 plan_amount={520}
                                                 plan_daily_earning={670}
-                                            />
+                                            /> */}
 
                                         </div>
                                     </div>
