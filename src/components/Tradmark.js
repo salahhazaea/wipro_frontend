@@ -1,7 +1,7 @@
 import React from 'react'
 import tradelogo from '../images/logo_g.svg'
 
-const Tradmark = () => {
+const Tradmark = (salahhazaea) => {salahhazaa
     return (
         <>
             <div className="p-5 text-center opacity-30">
